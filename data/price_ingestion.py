@@ -134,7 +134,7 @@ def flag_unusual_moves(performance: dict, threshold: float = 2.0) -> list[str]:
         if abs(change) >= threshold:
             direction = "UP" if change > 0 else "DOWN"
             flags.append(
-                f"⚠️  {ticker} moved {direction} {abs(change):.2f}% — "
+                f"!! {ticker} moved {direction} {abs(change):.2f}% -- "
                 f"current price: ${data['latest_price']}"
             )
 
@@ -174,7 +174,7 @@ def format_for_prompt(performance: dict, flags: list[str]) -> str:
 
     # Add flags section
     if flags:
-        lines.append("[ UNUSUAL MOVES — POTENTIAL SIGNAL ]")
+        lines.append("[ UNUSUAL MOVES -- POTENTIAL SIGNAL ]")
         for flag in flags:
             lines.append(f"  {flag}")
     else:

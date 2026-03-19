@@ -45,6 +45,7 @@ You must always respond in valid JSON format with exactly this structure:
       "conviction": "low" | "medium" | "high",
       "rationale": "Specific reason grounded in the provided data",
       "sector": "e.g. Defense, Energy, Safe Haven"
+      "position_size": "e.g. 3% of portfolio"
     }
   ],
   "signals_to_watch": [
@@ -60,6 +61,7 @@ Critical rules:
 - Every recommendation must include a rationale tied to the digest.
 - Be direct and specific. Avoid vague language.
 - Always return valid JSON. No preamble, no markdown, no extra text.
+- Position size must reflect conviction: low = 1-2%, medium = 3-5%, high = 5-10%.
 """
 
 
